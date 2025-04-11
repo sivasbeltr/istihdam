@@ -285,7 +285,7 @@ class Yetenek(models.Model):
     yetenek = models.CharField(
         _("Yetenek"), max_length=100, help_text=_("Yetenek, beceri veya uzmanlık alanı")
     )
-    seviye = models.PositiveSmallIntegerField(
+    seviye = models.CharField(
         _("Seviye"),
         choices=YetenekSeviyeChoices.choices,
         default=YetenekSeviyeChoices.IYI,
