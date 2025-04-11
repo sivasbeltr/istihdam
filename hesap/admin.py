@@ -66,6 +66,67 @@ class YasAraligiFilter(admin.SimpleListFilter):
         return queryset
 
 
+class EgitimDurumuDerecesiListFilter(admin.SimpleListFilter):
+    """EgitimDurumu modelindeki derece alanına göre filtreleme."""
+
+    title = _("Eğitim Derecesi")
+    parameter_name = "egitim_derecesi"
+
+    def lookups(self, request, model_admin):
+        # EgitimDurumu modelindeki DERECE_CHOICES'dan seçenekleri al
+        from hesap.choices import EgitimDereceChoices
+
+        return EgitimDereceChoices.choices
+
+    def queryset(self, request, queryset):
+        if self.value():
+            # Kullanıcının seçtiği dereceye sahip eğitim durumu olan vatandaşları filtrele
+            return queryset.filter(egitimler__derece=self.value())
+        return queryset
+
+
+class SertifikaVarMiListFilter(admin.SimpleListFilter):
+    """Sertifikası olan veya olmayan vatandaşlara göre filtreleme."""
+
+    title = _("Sertifika Durumu")
+    parameter_name = "sertifika_var_mi"
+
+    def lookups(self, request, model_admin):
+        return (
+            ("var", _("Sertifikası Var")),
+            ("yok", _("Sertifikası Yok")),
+        )
+
+    def queryset(self, request, queryset):
+        if self.value() == "var":
+            return queryset.filter(sertifikalar__isnull=False).distinct()
+        if self.value() == "yok":
+            return queryset.filter(sertifikalar__isnull=True)
+        return queryset
+
+
+class UstalikAlaniMeslekListFilter(admin.SimpleListFilter):
+    """UstalikAlani meslek alanına göre filtreleme."""
+
+    title = _("Uzmanlık Mesleği")
+    parameter_name = "ustalik_meslek"
+
+    def lookups(self, request, model_admin):
+        # Vatandaşların uzmanlık alanlarında kullanılan tüm meslekleri listele
+        meslekler = (
+            UstalikAlani.objects.values_list("meslek__id", "meslek__ad")
+            .distinct()
+            .order_by("meslek__ad")
+        )
+        return meslekler
+
+    def queryset(self, request, queryset):
+        if self.value():
+            # Seçilen mesleğe sahip uzmanlık alanı olan vatandaşları filtrele
+            return queryset.filter(ustalik_alanlari__meslek__id=self.value()).distinct()
+        return queryset
+
+
 # Inline Models
 class EgitimDurumuInline(admin.TabularInline):
     model = EgitimDurumu
@@ -140,6 +201,9 @@ class VatandasAdmin(admin.ModelAdmin):
         "ilce",
         "cinsiyet",
         YasAraligiFilter,  # Özel yaş aralığı filtresi
+        EgitimDurumuDerecesiListFilter,
+        SertifikaVarMiListFilter,
+        UstalikAlaniMeslekListFilter,
     )
     search_fields = (
         "kullanici__username",

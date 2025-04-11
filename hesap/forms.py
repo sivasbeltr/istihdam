@@ -1,5 +1,9 @@
 from django import forms
-from django.contrib.auth.forms import UserChangeForm, UserCreationForm
+from django.contrib.auth.forms import (
+    ReadOnlyPasswordHashField,
+    UserChangeForm,
+    UserCreationForm,
+)
 from django.utils.translation import gettext_lazy as _
 
 from .models import Kullanici
@@ -55,7 +59,7 @@ class KullaniciDegistirmeForm(UserChangeForm):
     Kullanıcı bilgilerini güncelleme formu
     """
 
-    password = None  # Password field'ını kaldır
+    password = ReadOnlyPasswordHashField()
 
     class Meta:
         model = Kullanici
