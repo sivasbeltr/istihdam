@@ -1,5 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
+from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 
 from .forms import KullaniciDegistirmeForm, KullaniciOlusturmaForm
@@ -14,6 +15,55 @@ from .models import (
     Vatandas,
     Yetenek,
 )
+
+
+# Özel filtreler
+class YasAraligiFilter(admin.SimpleListFilter):
+    """Yaş aralığına göre filtreleme"""
+
+    title = _("Yaş Aralığı")
+    parameter_name = "yas_araligi"
+
+    def lookups(self, request, model_admin):
+        return (
+            ("18-25", _("18-25")),
+            ("26-35", _("26-35")),
+            ("36-45", _("36-45")),
+            ("46-55", _("46-55")),
+            ("56+", _("56 ve üzeri")),
+        )
+
+    def queryset(self, request, queryset):
+        if self.value():
+            today = timezone.now().date()
+            if self.value() == "18-25":
+                min_date = today.replace(year=today.year - 25)
+                max_date = today.replace(year=today.year - 18)
+                return queryset.filter(
+                    dogum_tarihi__gte=min_date, dogum_tarihi__lte=max_date
+                )
+            elif self.value() == "26-35":
+                min_date = today.replace(year=today.year - 35)
+                max_date = today.replace(year=today.year - 26)
+                return queryset.filter(
+                    dogum_tarihi__gte=min_date, dogum_tarihi__lte=max_date
+                )
+            elif self.value() == "36-45":
+                min_date = today.replace(year=today.year - 45)
+                max_date = today.replace(year=today.year - 36)
+                return queryset.filter(
+                    dogum_tarihi__gte=min_date, dogum_tarihi__lte=max_date
+                )
+            elif self.value() == "46-55":
+                min_date = today.replace(year=today.year - 55)
+                max_date = today.replace(year=today.year - 46)
+                return queryset.filter(
+                    dogum_tarihi__gte=min_date, dogum_tarihi__lte=max_date
+                )
+            elif self.value() == "56+":
+                max_date = today.replace(year=today.year - 56)
+                return queryset.filter(dogum_tarihi__lte=max_date)
+        return queryset
 
 
 # Inline Models
@@ -78,10 +128,19 @@ class VatandasAdmin(admin.ModelAdmin):
         "telefon",
         "il",
         "ilce",
+        "cinsiyet",
+        "get_yas",
         "is_usta",
         "is_is_arayan",
     )
-    list_filter = ("is_usta", "is_is_arayan", "il")
+    list_filter = (
+        "is_usta",
+        "is_is_arayan",
+        "il",
+        "ilce",
+        "cinsiyet",
+        YasAraligiFilter,  # Özel yaş aralığı filtresi
+    )
     search_fields = (
         "kullanici__username",
         "kullanici__first_name",
@@ -185,6 +244,22 @@ class VatandasAdmin(admin.ModelAdmin):
 
     get_full_name.short_description = _("Ad Soyad")
     get_full_name.admin_order_field = "kullanici__first_name"
+
+    def get_yas(self, obj):
+        """Vatandaşın yaşını hesapla"""
+        if obj.dogum_tarihi:
+            today = timezone.now().date()
+            return (
+                today.year
+                - obj.dogum_tarihi.year
+                - (
+                    (today.month, today.day)
+                    < (obj.dogum_tarihi.month, obj.dogum_tarihi.day)
+                )
+            )
+        return "-"
+
+    get_yas.short_description = _("Yaş")
 
 
 class KullaniciAdmin(UserAdmin):
