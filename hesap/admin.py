@@ -440,7 +440,7 @@ class FirmaAdmin(admin.ModelAdmin):
             },
         ),
         (
-            _("Konum Bilgileri"),
+            _("Adres Bilgileri"),
             {
                 "fields": (
                     "il",
