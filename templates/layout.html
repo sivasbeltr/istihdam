@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Sivas Belediyesi İstihdam Ofisi{% endblock %}</title>
+    <meta name="description" content="{% block meta_description %}Sivas Belediyesi İstihdam Ofisi - İş arayanlar, firmalar ve ustalar için buluşma noktası{% endblock %}">
+    <meta name="keywords" content="istihdam, iş ilanı, Sivas, Sivas iş, usta, firma, iş arayan, iş veren">
+    <link rel="canonical" href="{% block canonical_url %}{{ request.build_absolute_uri }}{% endblock %}">
+
+    <!-- Favicons -->
+    <link rel="icon" href="{% block favicon %}/static/images/favicon.ico{% endblock %}" sizes="any">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#e30613',
+                        'secondary': '#004a93',
+                        'accent': '#f7b500',
+                        'text-dark': '#333333',
+                        'text-light': '#ffffff',
+                        'bg-light': '#f8f9fa',
+                        'bg-dark': '#121212',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Poppins', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .btn {
+                @apply inline-flex items-center justify-center px-6 py-3 font-semibold rounded-md transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+            }
+            .btn-primary {
+                @apply bg-primary text-white hover:bg-red-700 focus:ring-primary;
+            }
+            .btn-secondary {
+                @apply bg-secondary text-white hover:bg-blue-800 focus:ring-secondary;
+            }
+            .btn-accent {
+                @apply bg-accent text-text-dark hover:bg-yellow-400 focus:ring-accent;
+            }
+            .container-custom {
+                @apply container mx-auto px-4 sm:px-6 lg:px-8;
+            }
+        }
+    </style>
+
+    <!-- Dark mode script -->
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark')
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
+
+    {% block extra_head %}{% endblock %}
+</head>
+
+<body class="min-h-screen flex flex-col bg-bg-light dark:bg-bg-dark text-text-dark dark:text-text-light transition-colors duration-300">
+    <!-- Header -->
+    {% include 'components/header.html' %}
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    {% include 'components/footer.html' %}
+
+    <!-- Dark mode toggle script -->
+    <script>
+        function toggleDarkMode() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.theme = 'light';
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.theme = 'dark';
+            }
+        }
+    </script>
+
+    <!-- Additional Scripts -->
+    {% block extra_scripts %}{% endblock %}
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+<section class="bg-secondary text-white">
+    <div class="container-custom py-8 md:py-12">
+        <div class="flex flex-col items-center text-center">
+            <h1 class="text-xl md:text-2xl lg:text-3xl font-bold mb-3">
+                SİVAS BELEDİYESİ <br>
+                <span class="text-accent">İSTİHDAM OFİSİ</span>
+            </h1>
+
+            <!-- Carousel -->
+            <div class="carousel relative w-full max-w-2xl mb-4 overflow-hidden">
+                <!-- Left Arrow -->
+                <button class="carousel-arrow carousel-prev absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-secondary bg-opacity-50 hover:bg-opacity-75 rounded-r-lg p-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+
+                <!-- Carousel items -->
+                <div class="carousel-items flex transition-transform duration-500">
+                    <p class="carousel-item w-full shrink-0 text-sm md:text-base">
+                        İş arayanlar için fırsatlar, işverenler için çözümler sunuyoruz.
+                    </p>
+                    <p class="carousel-item w-full shrink-0 text-sm md:text-base">
+                        Usta eller Sivas'ta buluşuyor, hizmet kalitesi artıyor.
+                    </p>
+                    <p class="carousel-item w-full shrink-0 text-sm md:text-base">
+                        İşverenler için doğru çalışan, çalışanlar için doğru iş.
+                    </p>
+                    <p class="carousel-item w-full shrink-0 text-sm md:text-base">
+                        Eviniz için usta mı arıyorsunuz? Çözüm burada.
+                    </p>
+                </div>
+
+                <!-- Right Arrow -->
+                <button class="carousel-arrow carousel-next absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-secondary bg-opacity-50 hover:bg-opacity-75 rounded-l-lg p-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
+
+                <!-- Dots indicator -->
+                <div class="carousel-dots flex justify-center gap-2 mt-2">
+                    <button class="w-2 h-2 rounded-full bg-white opacity-50 active"></button>
+                    <button class="w-2 h-2 rounded-full bg-white opacity-50"></button>
+                    <button class="w-2 h-2 rounded-full bg-white opacity-50"></button>
+                    <button class="w-2 h-2 rounded-full bg-white opacity-50"></button>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-3">
+                <a href="/ilanlar/" class="btn btn-primary btn-sm md:btn-md transition-transform hover:scale-105">İş İlanları</a>
+                <a href="/ustalar/" class="btn btn-accent btn-sm md:btn-md text-text-dark transition-transform hover:scale-105">Ustalar</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Simple carousel functionality
+    document.addEventListener('DOMContentLoaded', function () {
+        const carouselItems = document.querySelector('.carousel-items');
+        const dots = document.querySelectorAll('.carousel-dots button');
+        const prevBtn = document.querySelector('.carousel-prev');
+        const nextBtn = document.querySelector('.carousel-next');
+        let currentSlide = 0;
+        const totalSlides = dots.length;
+
+        // Auto slide function
+        function autoSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+        }
+
+        // Set active dot and slide position
+        function updateCarousel() {
+            carouselItems.style.transform = `translateX(-${currentSlide * 100}%)`;
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('opacity-100', index === currentSlide);
+                dot.classList.toggle('opacity-50', index !== currentSlide);
+            });
+        }
+
+        // Click on dots
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentSlide = index;
+                updateCarousel();
+                resetInterval();
+            });
+        });
+
+        // Previous slide
+        prevBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+            resetInterval();
+        });
+
+        // Next slide
+        nextBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+            resetInterval();
+        });
+
+        // Reset interval after user interaction
+        function resetInterval() {
+            clearInterval(interval);
+            interval = setInterval(autoSlide, 4000);
+        }
+
+        // Start auto sliding
+        let interval = setInterval(autoSlide, 4000);
+
+        // Pause on hover
+        carouselItems.addEventListener('mouseenter', () => clearInterval(interval));
+        carouselItems.addEventListener('mouseleave', () => interval = setInterval(autoSlide, 4000));
+
+        // Initialize first slide
+        updateCarousel();
+    });
+</script>

@@ -1,0 +1,81 @@
+<section class="py-16 bg-gray-50 dark:bg-gray-800 relative overflow-hidden">
+    <!-- Decorative elements -->
+    <div class="absolute top-0 left-0 w-64 h-64 bg-primary/5 rounded-full -translate-x-1/2 -translate-y-1/2 dark:bg-primary/10"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-secondary/5 rounded-full translate-x-1/3 translate-y-1/3 dark:bg-secondary/10"></div>
+
+    <div class="container-custom relative">
+        <div class="text-center mb-10">
+            <span class="inline-block text-sm font-semibold text-secondary px-3 py-1 bg-secondary/10 dark:bg-secondary/20 rounded-full mb-2">RAKAMLARLA BİZ</span>
+            <h2 class="text-2xl md:text-3xl font-bold text-secondary dark:text-white">Başarılarımız</h2>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <!-- İstatistik 1 -->
+            <div class="text-center group">
+                <div class="bg-white dark:bg-gray-700 rounded-full h-32 w-32 flex items-center justify-center mx-auto mb-4 shadow-lg relative border-4 border-primary/20 transition-all duration-500 group-hover:scale-105 group-hover:border-primary/50">
+                    <div class="absolute inset-0 rounded-full bg-primary/5 dark:bg-primary/10 scale-0 group-hover:scale-100 transition-transform duration-500"></div>
+                    <span class="text-4xl md:text-5xl font-bold text-primary relative z-10" data-count="10000">10K+</span>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200">İşe Yerleştirme</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400">Başarılı işe yerleştirme sayısı</p>
+            </div>
+
+            <!-- İstatistik 2 -->
+            <div class="text-center group">
+                <div class="bg-white dark:bg-gray-700 rounded-full h-32 w-32 flex items-center justify-center mx-auto mb-4 shadow-lg relative border-4 border-secondary/20 transition-all duration-500 group-hover:scale-105 group-hover:border-secondary/50">
+                    <div class="absolute inset-0 rounded-full bg-secondary/5 dark:bg-secondary/10 scale-0 group-hover:scale-100 transition-transform duration-500"></div>
+                    <span class="text-4xl md:text-5xl font-bold text-secondary relative z-10" data-count="650">650+</span>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200">Firma Ortağı</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400">İşbirliği yaptığımız firma sayısı</p>
+            </div>
+
+            <!-- İstatistik 3 -->
+            <div class="text-center group">
+                <div class="bg-white dark:bg-gray-700 rounded-full h-32 w-32 flex items-center justify-center mx-auto mb-4 shadow-lg relative border-4 border-accent/20 transition-all duration-500 group-hover:scale-105 group-hover:border-accent/50">
+                    <div class="absolute inset-0 rounded-full bg-accent/5 dark:bg-accent/10 scale-0 group-hover:scale-100 transition-transform duration-500"></div>
+                    <span class="text-4xl md:text-5xl font-bold text-accent relative z-10" data-count="350">350+</span>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200">Kayıtlı Usta</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400">Platformumuzdaki usta sayısı</p>
+            </div>
+
+            <!-- İstatistik 4 -->
+            <div class="text-center group">
+                <div class="bg-white dark:bg-gray-700 rounded-full h-32 w-32 flex items-center justify-center mx-auto mb-4 shadow-lg relative border-4 border-primary/20 transition-all duration-500 group-hover:scale-105 group-hover:border-primary/50">
+                    <div class="absolute inset-0 rounded-full bg-primary/5 dark:bg-primary/10 scale-0 group-hover:scale-100 transition-transform duration-500"></div>
+                    <span class="text-4xl md:text-5xl font-bold text-primary relative z-10" data-count="45">45+</span>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-200">Eğitim Programı</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400">Düzenlediğimiz mesleki eğitim sayısı</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Optional: Add a counter animation if you want
+    document.addEventListener('DOMContentLoaded', () => {
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Only animate once
+                    statsObserver.unobserve(entry.target);
+
+                    // Add a subtle animation to the circles on initial view
+                    const circles = document.querySelectorAll('.rounded-full');
+                    circles.forEach((circle, index) => {
+                        setTimeout(() => {
+                            circle.classList.add('scale-105');
+                            setTimeout(() => circle.classList.remove('scale-105'), 300);
+                        }, index * 100);
+                    });
+                }
+            });
+        }, { threshold: 0.3 });
+
+        // Observe the stats section
+        const statsSection = document.querySelector('.grid-cols-2.md\\:grid-cols-4');
+        if (statsSection) statsObserver.observe(statsSection);
+    });
+</script>

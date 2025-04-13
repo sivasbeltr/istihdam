@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}İş İlanları - Sivas Belediyesi İstihdam Ofisi{% endblock %}
+
+{% block meta_description %}Sivas Belediyesi İstihdam Ofisi'ndeki güncel iş ilanları ve kariyer fırsatları{% endblock %}
+
+{% block content %}
+<div class="bg-secondary py-12">
+    <div class="container-custom">
+        <div class="text-center text-white">
+            <h1 class="text-3xl md:text-4xl font-bold mb-4">İş İlanları</h1>
+            <p class="text-lg md:max-w-3xl mx-auto">Sivas Belediyesi İstihdam Ofisi'ndeki güncel iş fırsatları ve kariyer olanaklarını keşfedin</p>
+        </div>
+    </div>
+</div>
+
+<!-- İş İlanları Ana Bölümü -->
+<section class="py-8 bg-gray-50 dark:bg-gray-800">
+    <div class="container-custom">
+        <div class="flex flex-col lg:flex-row gap-8">
+            <!-- İlanlar Listesi (Sol Bölüm) -->
+            <div class="w-full lg:w-2/3 order-2 lg:order-1" id="ilan-listesi-bolumu">
+                {% include "ilanlar/components/job-listings.html" %}
+            </div>
+
+            <!-- Filtreleme Bölümü (Sağ Bölüm) -->
+            <div class="w-full lg:w-1/3 order-1 lg:order-2" id="filtreleme-bolumu">
+                {% include "ilanlar/components/job-filters.html" %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

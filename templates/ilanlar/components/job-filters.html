@@ -1,0 +1,218 @@
+<div class="space-y-6">
+    <!-- Hızlı Filtreleme Düğmeleri -->
+    <div class="bg-white dark:bg-gray-700 rounded-lg shadow-md p-4">
+        <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-3">Hızlı Filtreler</h4>
+        <div class="flex flex-wrap gap-2">
+            <button type="button" class="px-3 py-1.5 text-sm font-medium rounded-md bg-primary/10 text-primary dark:bg-primary/30 hover:bg-primary/20 dark:hover:bg-primary/40">
+                Yeni İlanlar
+            </button>
+            <button type="button" class="px-3 py-1.5 text-sm font-medium rounded-md bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500">
+                Son Gün
+            </button>
+            <button type="button" class="px-3 py-1.5 text-sm font-medium rounded-md bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500">
+                Uzaktan Çalışma
+            </button>
+            <button type="button" class="px-3 py-1.5 text-sm font-medium rounded-md bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500">
+                Deneyimsiz
+            </button>
+            <button type="button" class="px-3 py-1.5 text-sm font-medium rounded-md bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500">
+                Engelli
+            </button>
+            <button type="button" class="px-3 py-1.5 text-sm font-medium rounded-md bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500">
+                Stajyer
+            </button>
+        </div>
+    </div>
+
+    <!-- Detaylı Filtreleme Formu -->
+    <div class="bg-white dark:bg-gray-700 rounded-lg shadow-md">
+        <div class="p-4 border-b border-gray-200 dark:border-gray-600">
+            <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200">Filtreler</h4>
+        </div>
+
+        <form id="filtre-formu" class="p-4 space-y-6">
+            <!-- İş Türü (Çalışma Modeli) -->
+            <div>
+                <h5 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">İş Türü</h5>
+                <div class="space-y-2">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="calisma_model[]" value="tam_zamanli" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-600 dark:bg-gray-800 rounded">
+                        <span class="ml-2 text-sm text-gray-700 dark:text-gray-300">Tam Zamanlı</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="checkbox" name="calisma_model[]" value="yari_zamanli" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-600 dark:bg-gray-800 rounded">
+                        <span class="ml-2 text-sm text-gray-700 dark:text-gray-300">Yarı Zamanlı</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="checkbox" name="calisma_model[]" value="uzaktan" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-600 dark:bg-gray-800 rounded">
+                        <span class="ml-2 text-sm text-gray-700 dark:text-gray-300">Uzaktan</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="checkbox" name="calisma_model[]" value="hibrit" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-600 dark:bg-gray-800 rounded">
+                        <span class="ml-2 text-sm text-gray-700 dark:text-gray-300">Hibrit</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="checkbox" name="calisma_model[]" value="stajyer" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-600 dark:bg-gray-800 rounded">
+                        <span class="ml-2 text-sm text-gray-700 dark:text-gray-300">Stajyer</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Sektör -->
+            <div>
+                <h5 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Sektör</h5>
+                <select name="sektor" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-primary dark:bg-gray-800 dark:text-white text-sm">
+                    <option value="">Tüm Sektörler</option>
+                    <option value="bilisim">Bilişim</option>
+                    <option value="insaat">İnşaat</option>
+                    <option value="uretim">Üretim</option>
+                    <option value="tarim">Tarım</option>
+                    <option value="hizmet">Hizmet</option>
+                    <option value="egitim">Eğitim</option>
+                    <option value="saglik">Sağlık</option>
+                    <option value="finans">Finans</option>
+                    <option value="tasima">Taşıma/Lojistik</option>
+                </select>
+            </div>
+
+            <!-- Lokasyon -->
+            <div>
+                <h5 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Lokasyon</h5>
+                <div class="space-y-3">
+                    <select name="il" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-primary dark:bg-gray-800 dark:text-white text-sm">
+                        <option value="">Tüm İller</option>
+                        <option value="sivas" selected>Sivas</option>
+                        <option value="istanbul">İstanbul</option>
+                        <option value="ankara">Ankara</option>
+                    </select>
+
+                    <select name="ilce" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-primary dark:bg-gray-800 dark:text-white text-sm">
+                        <option value="">Tüm İlçeler</option>
+                        <option value="merkez">Merkez</option>
+                        <option value="sarkisla">Şarkışla</option>
+                        <option value="gemerek">Gemerek</option>
+                        <option value="yildizeli">Yıldızeli</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Deneyim Seviyesi -->
+            <div>
+                <h5 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Deneyim</h5>
+                <div class="space-y-2">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="deneyim[]" value="deneyimsiz" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-600 dark:bg-gray-800 rounded">
+                        <span class="ml-2 text-sm text-gray-700 dark:text-gray-300">Deneyimsiz</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="checkbox" name="deneyim[]" value="az_tecrubeli" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-600 dark:bg-gray-800 rounded">
+                        <span class="ml-2 text-sm text-gray-700 dark:text-gray-300">Az Tecrübeli (0-2 Yıl)</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="checkbox" name="deneyim[]" value="orta_tecrubeli" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-600 dark:bg-gray-800 rounded">
+                        <span class="ml-2 text-sm text-gray-700 dark:text-gray-300">Orta Tecrübeli (2-5 Yıl)</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="checkbox" name="deneyim[]" value="tecrubeli" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-600 dark:bg-gray-800 rounded">
+                        <span class="ml-2 text-sm text-gray-700 dark:text-gray-300">Tecrübeli (5-10 Yıl)</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="checkbox" name="deneyim[]" value="uzman" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-600 dark:bg-gray-800 rounded">
+                        <span class="ml-2 text-sm text-gray-700 dark:text-gray-300">Uzman (10+ Yıl)</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Eğitim Seviyesi -->
+            <div>
+                <h5 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Eğitim Seviyesi</h5>
+                <div class="space-y-2">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="egitim[]" value="ilkokul" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-600 dark:bg-gray-800 rounded">
+                        <span class="ml-2 text-sm text-gray-700 dark:text-gray-300">İlkokul/Ortaokul</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="checkbox" name="egitim[]" value="lise" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-600 dark:bg-gray-800 rounded">
+                        <span class="ml-2 text-sm text-gray-700 dark:text-gray-300">Lise</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="checkbox" name="egitim[]" value="onlisans" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-600 dark:bg-gray-800 rounded">
+                        <span class="ml-2 text-sm text-gray-700 dark:text-gray-300">Önlisans</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="checkbox" name="egitim[]" value="lisans" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-600 dark:bg-gray-800 rounded">
+                        <span class="ml-2 text-sm text-gray-700 dark:text-gray-300">Lisans</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="checkbox" name="egitim[]" value="yuksek_lisans" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-600 dark:bg-gray-800 rounded">
+                        <span class="ml-2 text-sm text-gray-700 dark:text-gray-300">Yüksek Lisans/Doktora</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Yayın Tarihi -->
+            <div>
+                <h5 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Yayın Tarihi</h5>
+                <div class="space-y-2">
+                    <label class="flex items-center">
+                        <input type="radio" name="yayin_tarihi" value="bugun" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-600 dark:bg-gray-800">
+                        <span class="ml-2 text-sm text-gray-700 dark:text-gray-300">Bugün</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="radio" name="yayin_tarihi" value="son_3_gun" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-600 dark:bg-gray-800">
+                        <span class="ml-2 text-sm text-gray-700 dark:text-gray-300">Son 3 Gün</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="radio" name="yayin_tarihi" value="son_7_gun" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-600 dark:bg-gray-800">
+                        <span class="ml-2 text-sm text-gray-700 dark:text-gray-300">Son 1 Hafta</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="radio" name="yayin_tarihi" value="son_30_gun" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-600 dark:bg-gray-800">
+                        <span class="ml-2 text-sm text-gray-700 dark:text-gray-300">Son 1 Ay</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="radio" name="yayin_tarihi" value="tumu" checked class="h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-600 dark:bg-gray-800">
+                        <span class="ml-2 text-sm text-gray-700 dark:text-gray-300">Tümü</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="flex gap-3">
+                <button type="submit" class="btn btn-primary py-2 w-full">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
+                    </svg>
+                    Filtrele
+                </button>
+                <button type="reset" class="btn py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600">
+                    Temizle
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Popüler Aramalar -->
+    <div class="bg-white dark:bg-gray-700 rounded-lg shadow-md p-4">
+        <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-3">Popüler Aramalar</h4>
+        <div class="flex flex-wrap gap-2">
+            <a href="?search=yazilim" class="px-3 py-1.5 text-sm rounded-md bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-600">
+                Yazılım
+            </a>
+            <a href="?search=muhasebe" class="px-3 py-1.5 text-sm rounded-md bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-600">
+                Muhasebe
+            </a>
+            <a href="?search=pazarlama" class="px-3 py-1.5 text-sm rounded-md bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-600">
+                Pazarlama
+            </a>
+            <a href="?search=insaat" class="px-3 py-1.5 text-sm rounded-md bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-600">
+                İnşaat
+            </a>
+            <a href="?search=sofor" class="px-3 py-1.5 text-sm rounded-md bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-600">
+                Şoför
+            </a>
+            <a href="?search=hemşire" class="px-3 py-1.5 text-sm rounded-md bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-600">
+                Hemşire
+            </a>
+        </div>
+    </div>
+</div>

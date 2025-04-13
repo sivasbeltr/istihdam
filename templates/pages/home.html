@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}Sivas Belediyesi İstihdam Ofisi{% endblock %}
+
+{% block meta_description %}Sivas Belediyesi İstihdam Ofisi - İş arayanlar, firmalar ve ustalar için buluşma noktası{% endblock %}
+
+{% block content %}
+<!-- Mayor Message Section -->
+{% include "components/mayor-message.html" %}
+
+<!-- Stats Section -->
+{% include "components/stats.html" %}
+
+<!-- Recent Jobs Section -->
+{% include "components/recent-jobs.html" %}
+
+<!-- Featured Firms Section -->
+{% include "components/featured-firms.html" %}
+
+<!-- Featured Masters Section -->
+{% include "components/featured-masters.html" %}
+
+<!-- Contact Info Section -->
+{% include "components/contact-info.html" %}
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+    // Any additional JavaScript specific to the homepage
+    document.addEventListener('DOMContentLoaded', function () {
+        console.log('Home page loaded');
+    });
+</script>
+{% endblock %}

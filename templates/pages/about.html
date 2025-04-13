@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}Hakkımızda - Sivas Belediyesi İstihdam Ofisi{% endblock %}
+
+{% block meta_description %}Sivas Belediyesi İstihdam Ofisi hakkında bilgiler, misyonumuz, vizyonumuz ve sunduğumuz hizmetler{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+{% include "about/components/hero-section.html" %}
+
+<!-- Timeline Section -->
+{# include "about/components/timeline-section.html" #}
+
+<!-- Stats Section -->
+{% include "about/components/stats-section.html" %}
+
+<!-- Mission Vision Section -->
+{% include "about/components/mission-vision.html" %}
+
+<!-- Services Section -->
+{% include "about/components/services.html" %}
+
+<!-- Team Section -->
+{% include "about/components/team.html" %}
+{% endblock %}

@@ -1,0 +1,9 @@
+{
+    "editor.wordWrap": "off",
+    "html.format.wrapLineLength": 0,
+    "html.format.wrapAttributes": "auto",
+    "[django-html]": {
+        "editor.wordWrap": "off",
+        "editor.formatOnSave": false
+    }
+}

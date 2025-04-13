@@ -1,0 +1,352 @@
+<div class="bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden">
+    <!-- Sonuç ve Sıralama Başlığı -->
+    <div class="p-4 border-b border-gray-200 dark:border-gray-600 flex flex-wrap justify-between items-center gap-4">
+        <div>
+            <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200"><span id="usta-sayisi">42</span> Usta Bulundu</h2>
+        </div>
+        <div class="flex items-center">
+            <label for="siralama" class="text-sm text-gray-600 dark:text-gray-400 mr-2 whitespace-nowrap">Sırala:</label>
+            <select id="siralama" name="siralama" class="text-sm border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-primary dark:bg-gray-800 dark:text-white px-3 py-1.5">
+                <option value="puan-yuksek">En Yüksek Puan</option>
+                <option value="puan-dusuk">En Düşük Puan</option>
+                <option value="is-cok">En Çok İş Yapan</option>
+                <option value="tarih-yeni">En Yeni Katılan</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Ustalar Listesi -->
+    <div id="ustalar-listesi">
+        <!-- Usta 1 -->
+        <div class="border-b border-gray-200 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 transition">
+            <div class="p-5">
+                <div class="flex flex-col sm:flex-row gap-5">
+                    <!-- Profil Resmi -->
+                    <div class="sm:w-40 h-40 flex-shrink-0">
+                        <div class="relative w-full h-full rounded-lg overflow-hidden">
+                            <img src="https://placehold.co/400x400/004a93/ffffff?text=Mehmet+Usta" alt="Mehmet Ustaoğlu" class="w-full h-full object-cover">
+                            <div class="absolute top-2 right-2 flex items-center bg-green-500 text-white px-2 py-0.5 rounded text-xs">
+                                <span class="block h-2 w-2 rounded-full bg-white mr-1"></span>
+                                Müsait
+                            </div>
+                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent pt-8 pb-2 px-3">
+                                <div class="flex items-center text-white">
+                                    <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                    </svg>
+                                    <span class="ml-1 text-sm font-bold">4.8</span>
+                                    <span class="mx-1.5 text-white font-light">&middot;</span>
+                                    <span class="text-xs">(48)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Usta Bilgileri -->
+                    <div class="flex-1">
+                        <div class="flex flex-wrap items-start justify-between mb-2">
+                            <div>
+                                <h3 class="text-xl font-semibold text-secondary dark:text-accent hover:text-primary dark:hover:text-primary transition">
+                                    <a href="/ustalar/mehmet-ustaoglu">Mehmet Ustaoğlu</a>
+                                </h3>
+                                <p class="text-gray-700 dark:text-gray-300">Elektrik Tesisatı Ustası</p>
+                            </div>
+
+                            <div class="flex flex-wrap gap-2 mt-1">
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
+                                    <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-green-400" fill="currentColor" viewBox="0 0 8 8">
+                                        <circle cx="4" cy="4" r="3" />
+                                    </svg>
+                                    Belediye Onaylı
+                                </span>
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="-ml-0.5 mr-1.5 h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                    </svg>
+                                    Sigortalı Çalışma
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Konum ve İletişim Bilgileri -->
+                        <div class="flex flex-wrap gap-x-4 gap-y-2 text-sm text-gray-600 dark:text-gray-400 mb-3">
+                            <div class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                                Sivas, Merkez
+                            </div>
+                            <div class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                                15+ yıllık deneyim
+                            </div>
+                            <div class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                                </svg>
+                                <span>100+ tamamlanan iş</span>
+                            </div>
+                        </div>
+
+                        <!-- Hizmetler ve Açıklama -->
+                        <div class="mb-4">
+                            <p class="text-sm text-gray-600 dark:text-gray-300 line-clamp-2">
+                                Her türlü elektrik tesisatı, arıza tespiti ve onarımı, aydınlatma sistemleri, daire içi ve bina tesisatı, kaçak akım taraması ve elektrikli ev aletleri tamiri konusunda hizmet vermekteyim.
+                            </p>
+                        </div>
+
+                        <!-- Yetenekler/Hizmetler -->
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs rounded">Elektrik Tesisatı</span>
+                            <span class="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs rounded">Aydınlatma</span>
+                            <span class="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs rounded">Arıza Tespiti</span>
+                            <span class="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs rounded">Elektrikli Cihaz Tamiri</span>
+                        </div>
+
+                        <!-- Butonlar -->
+                        <div class="flex flex-wrap gap-3">
+                            <a href="/ustalar/mehmet-ustaoglu" class="btn btn-secondary py-2 text-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                Profili İncele
+                            </a>
+                            <a href="/ustalar/mehmet-ustaoglu/iletisim" class="btn btn-primary py-2 text-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                                </svg>
+                                İletişime Geç
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Usta 2 -->
+        <div class="border-b border-gray-200 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 transition">
+            <div class="p-5">
+                <div class="flex flex-col sm:flex-row gap-5">
+                    <!-- Profil Resmi -->
+                    <div class="sm:w-40 h-40 flex-shrink-0">
+                        <div class="relative w-full h-full rounded-lg overflow-hidden">
+                            <img src="https://placehold.co/400x400/e30613/ffffff?text=Ay%C5%9Fe+Kalfa" alt="Ayşe Kalfa" class="w-full h-full object-cover">
+                            <div class="absolute top-2 right-2 flex items-center bg-green-500 text-white px-2 py-0.5 rounded text-xs">
+                                <span class="block h-2 w-2 rounded-full bg-white mr-1"></span>
+                                Müsait
+                            </div>
+                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent pt-8 pb-2 px-3">
+                                <div class="flex items-center text-white">
+                                    <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                    </svg>
+                                    <span class="ml-1 text-sm font-bold">4.9</span>
+                                    <span class="mx-1.5 text-white font-light">&middot;</span>
+                                    <span class="text-xs">(36)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Usta Bilgileri -->
+                    <div class="flex-1">
+                        <div class="flex flex-wrap items-start justify-between mb-2">
+                            <div>
+                                <h3 class="text-xl font-semibold text-secondary dark:text-accent hover:text-primary dark:hover:text-primary transition">
+                                    <a href="/ustalar/ayse-kalfa">Ayşe Kalfa</a>
+                                </h3>
+                                <p class="text-gray-700 dark:text-gray-300">Döşeme ve Kaplama Ustası</p>
+                            </div>
+
+                            <div class="flex flex-wrap gap-2 mt-1">
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
+                                    <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-green-400" fill="currentColor" viewBox="0 0 8 8">
+                                        <circle cx="4" cy="4" r="3" />
+                                    </svg>
+                                    Belediye Onaylı
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Konum ve İletişim Bilgileri -->
+                        <div class="flex flex-wrap gap-x-4 gap-y-2 text-sm text-gray-600 dark:text-gray-400 mb-3">
+                            <div class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                                Sivas, Merkez
+                            </div>
+                            <div class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                                12+ yıllık deneyim
+                            </div>
+                            <div class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                                </svg>
+                                <span>85+ tamamlanan iş</span>
+                            </div>
+                        </div>
+
+                        <!-- Hizmetler ve Açıklama -->
+                        <div class="mb-4">
+                            <p class="text-sm text-gray-600 dark:text-gray-300 line-clamp-2">
+                                Laminant, parke, seramik, granit, mermer gibi her türlü yer döşemesi ve duvar kaplaması işlerinde uzmanım. Banyo ve mutfak yenileme, dış cephe kaplama ve ısı yalıtımı konularında tecrübeliyim.
+                            </p>
+                        </div>
+
+                        <!-- Yetenekler/Hizmetler -->
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs rounded">Seramik Döşeme</span>
+                            <span class="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs rounded">Laminant Parke</span>
+                            <span class="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs rounded">Mermer</span>
+                            <span class="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs rounded">Banyo Yenileme</span>
+                        </div>
+
+                        <!-- Butonlar -->
+                        <div class="flex flex-wrap gap-3">
+                            <a href="/ustalar/ayse-kalfa" class="btn btn-secondary py-2 text-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                Profili İncele
+                            </a>
+                            <a href="/ustalar/ayse-kalfa/iletisim" class="btn btn-primary py-2 text-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                                </svg>
+                                İletişime Geç
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Usta 3 -->
+        <div class="border-b border-gray-200 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 transition">
+            <div class="p-5">
+                <div class="flex flex-col sm:flex-row gap-5">
+                    <!-- Profil Resmi -->
+                    <div class="sm:w-40 h-40 flex-shrink-0">
+                        <div class="relative w-full h-full rounded-lg overflow-hidden">
+                            <img src="https://placehold.co/400x400/f7b500/333333?text=Ali+Marangoz" alt="Ali Marangoz" class="w-full h-full object-cover">
+                            <div class="absolute top-2 right-2 flex items-center bg-green-500 text-white px-2 py-0.5 rounded text-xs">
+                                <span class="block h-2 w-2 rounded-full bg-white mr-1"></span>
+                                Müsait
+                            </div>
+                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent pt-8 pb-2 px-3">
+                                <div class="flex items-center text-white">
+                                    <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                    </svg>
+                                    <span class="ml-1 text-sm font-bold">5.0</span>
+                                    <span class="mx-1.5 text-white font-light">&middot;</span>
+                                    <span class="text-xs">(52)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Usta Bilgileri -->
+                    <div class="flex-1">
+                        <div class="flex flex-wrap items-start justify-between mb-2">
+                            <div>
+                                <h3 class="text-xl font-semibold text-secondary dark:text-accent hover:text-primary dark:hover:text-primary transition">
+                                    <a href="/ustalar/ali-marangoz">Ali Marangoz</a>
+                                </h3>
+                                <p class="text-gray-700 dark:text-gray-300">Mobilya Ustası</p>
+                            </div>
+
+                            <div class="flex flex-wrap gap-2 mt-1">
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
+                                    <svg class="-ml-0.5 mr-1.5 h-2 w-2 text-green-400" fill="currentColor" viewBox="0 0 8 8">
+                                        <circle cx="4" cy="4" r="3" />
+                                    </svg>
+                                    Belediye Onaylı
+                                </span>
+                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="-ml-0.5 mr-1.5 h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                    </svg>
+                                    Sigortalı Çalışma
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Konum ve İletişim Bilgileri -->
+                        <div class="flex flex-wrap gap-x-4 gap-y-2 text-sm text-gray-600 dark:text-gray-400 mb-3">
+                            <div class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                                Sivas, Merkez
+                            </div>
+                            <div class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                                25+ yıllık deneyim
+                            </div>
+                            <div class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                                </svg>
+                                <span>120+ tamamlanan iş</span>
+                            </div>
+                        </div>
+
+                        <!-- Hizmetler ve Açıklama -->
+                        <div class="mb-4">
+                            <p class="text-sm text-gray-600 dark:text-gray-300 line-clamp-2">
+                                Ahşap mobilya üretimi, tasarımı, onarımı ve restorasyonu konularında hizmet vermekteyim. Mutfak dolapları, gardroplar, kapı ve pencere üretimi, özel tasarım mobilyalar yapıyorum. Antika mobilya restorasyonu da yapabilirim.
+                            </p>
+                        </div>
+
+                        <!-- Yetenekler/Hizmetler -->
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs rounded">Ahşap Mobilya</span>
+                            <span class="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs rounded">Mutfak Dolabı</span>
+                            <span class="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs rounded">Özel Tasarım</span>
+                            <span class="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs rounded">Restorasyon</span>
+                        </div>
+
+                        <!-- Butonlar -->
+                        <div class="flex flex-wrap gap-3">
+                            <a href="/ustalar/ali-marangoz" class="btn btn-secondary py-2 text-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                Profili İncele
+                            </a>
+                            <a href="/ustalar/ali-marangoz/iletisim" class="btn btn-primary py-2 text-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                                </svg>
+                                İletişime Geç
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sayfalama -->
+    <div class="p-4 flex justify-center" id="sayfalama">
+        <nav class="inline-flex rounded-md shadow">
+            <a href="#" class="px-3 py-2 rounded-l-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600">Önceki</a>
+            <a href="#" class="px-3 py-2 border-t border-b border-gray-300 dark:border-gray-600 bg-primary text-white">1</a>
+            <a href="#" class="px-3 py-2 border-t border-b border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600">2</a>
+            <a href="#" class="px-3 py-2 border-t border-b border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600">3</a>
+            <a href="#" class="px-3 py-2 rounded-r-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600">Sonraki</a>
+        </nav>
+    </div>
+</div>
