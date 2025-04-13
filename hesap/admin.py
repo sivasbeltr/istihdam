@@ -325,6 +325,12 @@ class VatandasAdmin(admin.ModelAdmin):
 
     get_yas.short_description = _("Yaş")
 
+    def get_readonly_fields(self, request, obj=None):
+        """Readonly alanları sadece admin panelinde görüntüle"""
+        if obj:
+            return ["kullanici", "olusturma_tarihi", "guncelleme_tarihi", "uuid"]
+        return super().get_readonly_fields(request, obj)
+
 
 class KullaniciAdmin(UserAdmin):
     add_form = KullaniciOlusturmaForm

@@ -240,11 +240,12 @@ class IsTecrubesi(models.Model):
         default=False,
         help_text=_("Bu firmada halen çalışıyorsa işaretleyin"),
     )
-    aciklama = models.TextField(
+    aciklama = models.CharField(
         _("Açıklama"),
         blank=True,
         null=True,
         help_text=_("Yaptığınız işler ve sorumluluklar hakkında bilgi"),
+        max_length=1000,
     )
     referans_adi = models.CharField(
         _("Referans Adı"),
@@ -370,11 +371,12 @@ class UstalikAlani(models.Model):
     deneyim_yili = models.PositiveSmallIntegerField(
         _("Deneyim Yılı"), default=0, help_text=_("Bu meslekteki toplam deneyim yılı")
     )
-    aciklama = models.TextField(
+    aciklama = models.CharField(
         _("Açıklama"),
         blank=True,
         null=True,
         help_text=_("Bu meslekteki ustalık hizmetleriniz hakkında bilgi"),
+        max_length=1000,
     )
     fiyat_bilgisi = models.CharField(
         _("Fiyat Bilgisi"),
